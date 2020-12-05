@@ -10,10 +10,11 @@ else
 ifconfig wlan1 down
 ifconfig wlan0 down
 iwconfig $1 mode monitor
+service NetworkManager stop
 ifconfig $1 up
 iwconfig
 
-service NetworkManager stop
+
 
 airodump-ng $1
 
